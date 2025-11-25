@@ -6,7 +6,7 @@ function setDapurLed() {
 }
 
 function setKamarLed() {
-  fetch(endpoint + "/dapur", {
+  fetch(endpoint + "/kamar", {
     method: "POST"
   }).then(response => resonse.text()).then(result => console.log(result))
   
