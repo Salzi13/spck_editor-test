@@ -8,7 +8,7 @@ function setDapurLed() {
 function setKamarLed() {
   fetch(endpoint + "/kamar", {
     method: "POST"
-  }).then(response => resonse.text()).then(result => console.log(result))
+  }).then(response => response.text()).then(result => console.log(result))
   
   LedKamar.style.backgroundColor="red";
   ledKamarImage.src="./led-on.png";
