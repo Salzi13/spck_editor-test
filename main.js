@@ -5,13 +5,25 @@ function setDapurLed() {
   ledDapurImage.src="./led-on.png";
 }
 
+function getKamarLed (){
+    fetch(endpoint + "/kamar", {
+    method: "GET"
+  }).then(response => response.text()).then(result => {
+      if(result == "ON") {
+          LedKamar.style.backgroundColo ="blue";
+          ledKamarImage.src="./led-on.png";
+      } else {
+          LedKamar.style.backgroundColor="lightblue";
+          ledKamarImage.src="./led-off.png";
+      }
+  });
+  
+}
+
 function setKamarLed() {
   fetch(endpoint + "/kamar", {
     method: "POST"
-  }).then(response => response.text()).then(result => console.log(result))
-  
-  LedKamar.style.backgroundColor="red";
-  ledKamarImage.src="./led-on.png";
+  }).then(response => response.text()).then(() => location.reload());
 }
 
 function setTamuLed() {
@@ -23,3 +35,5 @@ function setToiletLed() {
   LedToilet.style.backgroundColor="red";
   ledToiletImage.src="./led-on.png";
 }
+
+getKamarLed();
