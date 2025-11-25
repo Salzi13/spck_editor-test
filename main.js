@@ -11,10 +11,10 @@ function getKamarLed (){
   }).then(response => response.text()).then(result => {
       if(result == "ON") {
           LedKamar.style.backgroundColo ="blue";
-          ledKamarImage.src="./led-on.png";
+          ledKamarImage.src="./led-off.png";
       } else {
           LedKamar.style.backgroundColor="lightblue";
-          ledKamarImage.src="./led-off.png";
+          ledKamarImage.src="./led-on.png";
       }
   });
   
