@@ -5,10 +5,10 @@ function getDapurLed() {
   ).then(response => response.text()).then(result => {
       if(result == "ON") {
           LedDapur.style.backgroundColor="blue";
-          ledDapurImage.src="./led-off.png";
+          ledDapurImage.src="./led-on.png";
       } else {
           LedDapur.style.backgroundColor="lightblue";
-          ledDapurImage.src="./led-on.png";
+          ledDapurImage.src="./led-off.png";
       }
   });
 }
@@ -24,10 +24,10 @@ function getKamarLed (){
   ).then(response => response.text()).then(result => {
       if(result == "ON") {
           LedKamar.style.backgroundColo ="blue";
-          ledKamarImage.src="./led-off.png";
+          ledKamarImage.src="./led-on.png";
       } else {
           LedKamar.style.backgroundColor="lightblue";
-          ledKamarImage.src="./led-on.png";
+          ledKamarImage.src="./led-off.png";
       }
   });
 }
@@ -43,10 +43,10 @@ function getTamuLed() {
   ).then(response => response.text()).then(result => {
       if(result == "ON") {
           LedTamu.style.backgroundColor="blue";
-          ledTamuImage.src="./led-off.png";
+          ledTamuImage.src="./led-on.png";
       } else {
           LedTamu.style.backgroundColor="lightblue";
-          ledTamuImage.src="./led-on.png";
+          ledTamuImage.src="./led-off.png";
       }
   });
 }
@@ -62,10 +62,10 @@ function getToiletLed() {
   ).then(response => response.text()).then(result => {
       if(result == "ON") {
           LedToilet.style.backgroundColor="blue";
-          ledToiletImage.src="./led-off.png";
+          ledToiletImage.src="./led-on.png";
       } else {
           LedToilet.style.backgroundColor="lightblue";
-          ledToiletImage.src="./led-on.png";
+          ledToiletImage.src="./led-off.png";
       }
   });
 }
