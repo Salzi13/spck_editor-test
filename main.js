@@ -57,7 +57,7 @@ function setTamuLed() {
   }).then(response => response.text()).then(() => location.reload());
 }
 
-function getTamuLed() {
+function getToiletLed() {
   fetch(endpoint + "/toilet", {method: "GET"}
   ).then(response => response.text()).then(result => {
       if(result == "ON") {
