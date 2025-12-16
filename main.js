@@ -1,14 +1,27 @@
 const endpoint = "http://192.168.1.8";
 
+function getDapurLed() {
+  fetch(endpoint + "/dapur", {method: "GET"}
+  ).then(response => response.text()).then(result => {
+      if(result == "ON") {
+          LedDapur.style.backgroundColor="blue";
+          ledDapurImage.src="./led-off.png";
+      } else {
+          LedDapur.style.backgroundColor="lightblue";
+          ledDapurImage.src="./led-on.png";
+      }
+  });
+}
+
 function setDapurLed() {
-  LedDapur.style.backgroundColor="red";
-  ledDapurImage.src="./led-on.png";
+  fetch(endpoint + "/dapur", {
+    method: "POST"
+  }).then(response => response.text()).then(() => location.reload());
 }
 
 function getKamarLed (){
-    fetch(endpoint + "/kamar", {
-    method: "GET"
-  }).then(response => response.text()).then(result => {
+  fetch(endpoint + "/kamar", {method: "GET"}
+  ).then(response => response.text()).then(result => {
       if(result == "ON") {
           LedKamar.style.backgroundColo ="blue";
           ledKamarImage.src="./led-off.png";
@@ -17,7 +30,6 @@ function getKamarLed (){
           ledKamarImage.src="./led-on.png";
       }
   });
-  
 }
 
 function setKamarLed() {
@@ -26,14 +38,45 @@ function setKamarLed() {
   }).then(response => response.text()).then(() => location.reload());
 }
 
+function getTamuLed() {
+  fetch(endpoint + "/tamu", {method: "GET"}
+  ).then(response => response.text()).then(result => {
+      if(result == "ON") {
+          LedTamu.style.backgroundColor="blue";
+          ledTamuImage.src="./led-off.png";
+      } else {
+          LedTamu.style.backgroundColor="lightblue";
+          ledTamuImage.src="./led-on.png";
+      }
+  });
+}
+
 function setTamuLed() {
-  LedTamu.style.backgroundColor="red";
-  ledTamuImage.src="./led-on.png";
+  fetch(endpoint + "/tamu", {
+    method: "POST"
+  }).then(response => response.text()).then(() => location.reload());
+}
+
+function getTamuLed() {
+  fetch(endpoint + "/toilet", {method: "GET"}
+  ).then(response => response.text()).then(result => {
+      if(result == "ON") {
+          LedToilet.style.backgroundColor="blue";
+          ledToiletImage.src="./led-off.png";
+      } else {
+          LedToilet.style.backgroundColor="lightblue";
+          ledToiletImage.src="./led-on.png";
+      }
+  });
 }
 
 function setToiletLed() {
-  LedToilet.style.backgroundColor="red";
-  ledToiletImage.src="./led-on.png";
+  fetch(endpoint + "/toilet", {
+    method: "POST"
+  }).then(response => response.text()).then(() => location.reload());
 }
 
+getDapurLed();
 getKamarLed();
+getTamuLed();
+getToiletLed();
