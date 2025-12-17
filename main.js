@@ -1,4 +1,4 @@
-const endpoint = "http://192.168.1.9";
+const endpoint = "http://10.252.1.9";
 
 function getDapurLed() {
   fetch(endpoint + "/dapur", {method: "GET"}
